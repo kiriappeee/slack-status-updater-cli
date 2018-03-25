@@ -32,3 +32,7 @@
 [[constraint]]
   branch = "master"
   name = "github.com/kiriappeee/slack-status-updater-core"
+
+[[constraint]]
+  name = "github.com/urfave/cli"
+  version = "1.20.0"

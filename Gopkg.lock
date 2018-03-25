@@ -14,12 +14,6 @@
   revision = "2a51da85cc3bc2e20bd8b4bebd615064b3860030"
 
 [[projects]]
-  branch = "master"
-  name = "github.com/kiriappeee/ssucore"
-  packages = ["."]
-  revision = "2a51da85cc3bc2e20bd8b4bebd615064b3860030"
-
-[[projects]]
   name = "github.com/nlopes/slack"
   packages = ["."]
   revision = "8ab4d0b364ef1e9af5d102531da20d5ec902b6c4"
@@ -34,6 +28,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "bdbc253cc6e5f46a550f784e5e70ff1c61f1e79294450e6cb0e25c46abb8180f"
+  inputs-digest = "e93c320ac81c00f54c118cb014d55f836c979e92de5fd1407d48fd5e6c495967"
   solver-name = "gps-cdcl"
   solver-version = 1

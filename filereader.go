@@ -4,7 +4,7 @@ import (
 	"os"
 	"io/ioutil"
 
-	"github.com/kiriappeee/ssucore"
+	"github.com/kiriappeee/slack-status-updater-core"
 )
 
 func getStatusesFromFile(pathToStatusFile string) ([] ssucore.Status, error) {
