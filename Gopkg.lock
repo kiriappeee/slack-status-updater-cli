@@ -11,13 +11,19 @@
   branch = "master"
   name = "github.com/kiriappeee/slack-status-updater-core"
   packages = ["."]
-  revision = "2a51da85cc3bc2e20bd8b4bebd615064b3860030"
+  revision = "0f9f7d45d2f3f5948e434b86389d9cc7fe9365e6"
 
 [[projects]]
   name = "github.com/nlopes/slack"
   packages = ["."]
   revision = "8ab4d0b364ef1e9af5d102531da20d5ec902b6c4"
   version = "v0.2.0"
+
+[[projects]]
+  name = "github.com/urfave/cli"
+  packages = ["."]
+  revision = "cfb38830724cc34fedffe9a2a29fb54fa9169cd1"
+  version = "v1.20.0"
 
 [[projects]]
   name = "gopkg.in/yaml.v2"
@@ -28,6 +34,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "e93c320ac81c00f54c118cb014d55f836c979e92de5fd1407d48fd5e6c495967"
+  inputs-digest = "1fd00f3c3fbaf33c6fc7de1d172ea2255bbac09fddcdce3ddbc3e8786d5836bc"
   solver-name = "gps-cdcl"
   solver-version = 1
