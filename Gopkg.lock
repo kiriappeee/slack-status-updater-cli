@@ -20,20 +20,20 @@
   version = "v0.2.0"
 
 [[projects]]
+  branch = "master"
   name = "github.com/urfave/cli"
   packages = ["."]
-  revision = "cfb38830724cc34fedffe9a2a29fb54fa9169cd1"
-  version = "v1.20.0"
+  revision = "8e01ec4cd3e2d84ab2fe90d8210528ffbb06d8ff"
 
 [[projects]]
+  branch = "v2"
   name = "gopkg.in/yaml.v2"
   packages = ["."]
-  revision = "7f97868eec74b32b0982dd158a51a446d1da7eb5"
-  version = "v2.1.1"
+  revision = "4fc5987536ef307a24ca299aee7ae301cde3d221"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "1fd00f3c3fbaf33c6fc7de1d172ea2255bbac09fddcdce3ddbc3e8786d5836bc"
+  inputs-digest = "e4275d26a51342070e1232873684b66c031818b0ddc7388593699c44f27acff9"
   solver-name = "gps-cdcl"
   solver-version = 1

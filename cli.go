@@ -4,6 +4,7 @@ import (
 	"os"
 	"fmt"
 	"log"
+	"strings"
 
 	"github.com/urfave/cli"
 	"github.com/kiriappeee/slack-status-updater-core"
@@ -14,9 +15,16 @@ func main(){
 	app.Name = "Slack Status Updater"
 	app.Usage = "Painless status updating via your Terminal"
 	app.Version = "0.0.1 alpha super pre release"
-	slackToken := os.Getenv("SLACKPERSONALTOKEN")
+	app.Flags = []cli.Flag {
+		cli.StringFlag{
+			Name: "token",
+			Usage: "Slack Legacy/API token to use with the CLI",
+			FilePath: os.Getenv("HOME") + "/.config/ssucli/tokenconfig",
+		},
+	}
 	fileToReadStatusesFrom := os.Getenv("HOME") + "/.config/ssucli/statuses.yaml"
 	app.Action = func(c *cli.Context) error {
+		slackToken := strings.TrimSpace(c.String("token"))
 		statusName := c.Args().Get(0)
 		statusList, err := getStatusesFromFile(fileToReadStatusesFrom)
 		if err != nil {
