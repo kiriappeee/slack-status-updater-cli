@@ -104,3 +104,7 @@ To add a new status, simply open `$HOME/.config/ssucli/statuses.yaml` and add a 
 ```
 
 That's it :).
+
+## Next steps:
+
+Some immediate next steps I have in mind center around CRUD operations of statuses and setting up a basic `statuses.yaml` file as a placeholder when doing the first run.
