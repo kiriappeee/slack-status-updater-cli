@@ -92,6 +92,7 @@ Status post result: Status set for ping
 ```
 
 * The effect of the above will be to set your status emoji to bell and your status message to "Working and available for pings :)". 
+* You can alternatively use `slackstatus ping` to achieve the same thing (new in 0.0.2a)
 
 ## Adding new statuses.
 
