@@ -6,6 +6,7 @@ import (
 	"log"
 	"strings"
 	"text/tabwriter"
+	"io/ioutil"
 
 	"github.com/urfave/cli"
 	"github.com/kiriappeee/slack-status-updater-core"
@@ -13,10 +14,16 @@ import (
 
 
 func main(){
+	if err := checkAndSetupConfigDirectory(os.Getenv("HOME") + "/.config/ssucli/"); err != nil {
+		log.Fatal(err)
+	}
+	if err := checkAndGetToken(); err !=nil {
+		log.Fatal(err)
+	}
 	app := cli.NewApp()
 	app.Name = "Slack Status Updater"
 	app.Usage = "Painless status updating via your Terminal"
-	app.Version = "0.1.0"
+	app.Version = "0.2.0"
 	app.Flags = []cli.Flag {
 		cli.StringFlag{
 			Name: "token",
@@ -88,6 +95,35 @@ func changeStatus(c *cli.Context) error{
 	if err != nil {
 		fmt.Printf("There was an error while setting the status %s\n", err.Error())
 		return nil
+	}
+	return nil
+}
+
+func checkAndGetToken() error {
+	_, err := os.Stat(os.Getenv("HOME") + "/.config/ssucli/tokenconfig")
+	if os.IsNotExist(err) {
+		return err
+	} else {
+		data, err := ioutil.ReadFile(os.Getenv("HOME") + "/.config/ssucli/tokenconfig")
+		if err != nil {
+			return err
+		} else {	
+			if string(data) == "" {
+				fmt.Print("Please enter the slack token value: ")
+				fmt.Scanln(&data)
+				f, err := os.OpenFile(os.Getenv("HOME") + "/.config/ssucli/tokenconfig", os.O_WRONLY, 0664); if err != nil {
+					return err
+				} else {
+					if _, err = f.Write(data); err != nil{
+						return err
+					} else {
+						if err = f.Close(); err != nil{
+							return err
+						}
+					}
+				}				
+			}
+		}
 	}
 	return nil
 }
