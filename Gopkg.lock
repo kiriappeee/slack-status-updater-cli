@@ -11,7 +11,7 @@
   branch = "master"
   name = "github.com/kiriappeee/slack-status-updater-core"
   packages = ["."]
-  revision = "89551531c985c788457c6fee6660eb23379aedf5"
+  revision = "d89d3d517a5b92920838abe7385b8f939d111392"
 
 [[projects]]
   name = "github.com/nlopes/slack"
