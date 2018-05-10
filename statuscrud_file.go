@@ -7,12 +7,11 @@ import (
 type statusCRUDFileImplementation string
 
 func (s statusCRUDFileImplementation) GetStatuses() []ssucore.Status {
-	return []ssucore.Status{
-		ssucore.Status{"test", "emojiA", "Status One"},
-		ssucore.Status{"test1", "emojiB", "Status Two"},
-		ssucore.Status{"test2", "emojiC", "Status Three"},
-		ssucore.Status{"test3", "emojiD", "Status Four"},
+	if s != "" {
+		statuses, _ := getStatusesFromFile(string(s))
+		return statuses
 	}
+	return []ssucore.Status{}
 }
 
 func (s statusCRUDFileImplementation) GetStatusByKey(name string) (ssucore.Status, error) {

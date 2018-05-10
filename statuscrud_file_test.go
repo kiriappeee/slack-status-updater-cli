@@ -8,6 +8,7 @@ import (
 )
 
 func TestStatusesCanBeListed(t *testing.T) {
+	fileSetUp()
 	var sci ssucore.StatusCRUDInterface
 	homeDirectory := os.Getenv("HOME")
 	sci = statusCRUDFileImplementation(homeDirectory + "/.config/ssuclitest/statuses.yaml")
